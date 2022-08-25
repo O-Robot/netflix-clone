@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter, Switch, Route } from "react-router-dom";
+import { BrowserRouter, Switch, Route, Routes } from "react-router-dom";
 import "./App.css";
 import Home from "./pages/Home";
 import NetflixShow from "./pages/NetflixShow";
@@ -7,12 +7,11 @@ import NetflixShow from "./pages/NetflixShow";
 function App() {
   return (
     <BrowserRouter>
-      <div className="App">
-        <Route exact path="/" component={Home} />
-        <Route exact path="/" component={NetflixShow} />
-      </div>
+      <Routes>
+        <Route index element={<Home />} />
+        <Route path="show" element={<NetflixShow />} />
+      </Routes>
     </BrowserRouter>
-    
   );
 }
 
